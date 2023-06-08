@@ -1,0 +1,40 @@
+.container {
+    background-color: rgba(65, 31, 100, 0.861);
+    padding: 25px 18px;
+    border-radius: 30px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+.link {
+    text-decoration: none;
+}
+
+.imagen{
+    
+    margin: 6%;
+    border-radius: 7%;
+}
+
+.boton{
+    background-color: rgb(255 185 241 / 82%);
+    border-radius: 100px;
+    /* margin: 10%; */
+    margin-left: 25%; 
+    margin-right: 25%; 
+}
+
+.boton:hover{
+    background-color: rgba(249, 238, 247, 0.82);
+    cursor: pointer;
+
+}

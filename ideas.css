@@ -1,0 +1,92 @@
+.card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    &:hover .front {
+      transform: perspective(800px) rotateY(180deg);
+    }
+    &:hover .back {
+      transform: perspective(800px) rotateY(360deg);
+    }
+    & h2 {
+      margin: 0;
+      cursor: default;
+    }
+    & button {
+      font-family: 'RickAndMorty';
+      font-size: large;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #ffe93d;
+      color: red;
+      &:hover {
+        cursor: pointer;
+        background-color: red;
+        color: #ffe93d;
+      }
+    }
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.8s;
+    box-shadow: 0 5px 10px black;
+  }
+  
+  .front {
+    transform: perspective(800px) rotateY(0deg);
+    & img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    & h2 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      color: #ffe93d;
+      font-size: xx-large;
+      background: rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+  }
+  
+  .back {
+    transform: perspective(800px) rotateY(180deg);
+    background: #87c2e77a;
+    color: #2a1e4c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+
+
+
+
+
+
+  /* <div className={style.card}>
+        <div className={style.front}>
+          <img src={props.image} alt="" />
+          <h2>{props.name}</h2>
+        </div>
+        <div className={style.back}>
+          <button onClick={closeHandle}>Quitar Carta</button>
+          <h2>{props.status}</h2>
+          <h2>{props.species}</h2>
+          <h2>{props.gender}</h2>
+          <h2>{props.origin.name}</h2>
+        </div>
+      </div> */

@@ -1,0 +1,23 @@
+.navContainer {
+    background-color: rgba(84, 57, 112, 0.898);
+    border-bottom: 2px solid rgba(55, 12, 65, 0.903);
+    display: flex;
+
+    position: sticky;
+    padding: 30px 30px;
+    top: 0;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.botones {
+    padding: 5px 10px;
+}
+
+.botones:hover {
+
+}
+
+.logout {
+    padding: 5px 10px;
+}

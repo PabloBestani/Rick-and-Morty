@@ -1,0 +1,8 @@
+.grid {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+    }
