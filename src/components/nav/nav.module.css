@@ -10,6 +10,20 @@
     z-index: 100;
 }
 
+.searchBar {
+    box-sizing: border-box;
+    width: 30%;
+    padding: 0 80px;
+    /* width: 450px; */
+}
+
+.hiddenSB {
+    box-sizing: border-box;
+    width: 30%;
+    padding: 0 80px;
+    visibility: hidden;
+}
+
 .botones {
     padding: 5px 10px;
 }

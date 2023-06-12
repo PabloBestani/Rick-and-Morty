@@ -2,11 +2,11 @@ import './App.css';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import Cards from './components/cards/Cards.jsx';
 import Nav from './components/nav/Nav';
-import About from './components/about/About';
+import About from './views/about/About';
+import Home from './views/home/Home';
+import Login from './views/login/Login';
 import Detail from './components/detail/Detail';
-import Form from './components/form/form';
 import Error from './components/error/Error';
 import Favorites from './components/favorites/Favorites';
 import { removeFav } from './redux/actions';
@@ -83,9 +83,9 @@ function App({removeFav}) {
          <Routes>
             {/* {error404 &&
                <Route path='/error' element={<Error />} />} */}
-            <Route path='/' element={<Form login={login} />} />
+            <Route path='/' element={<Login login={login} />} />
             <Route path='/home'
-               element={<Cards characters={characters} onClose={onClose}/>} />
+               element={<Home characters={characters} onClose={onClose} />} />
             <Route path='/favorites' element={<Favorites/>} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />

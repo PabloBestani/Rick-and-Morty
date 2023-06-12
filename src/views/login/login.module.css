@@ -1,0 +1,11 @@
+.background {
+    min-height: 100vh;
+    background-image: url("../../assets/rick-and-morty-space-cruiser-4k-wallpaper-uhdpaper.com-926@0@e.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: rgba(40, 10, 27, 0.241);
+}

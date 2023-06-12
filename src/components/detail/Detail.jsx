@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import styles from './detail.module.css';
 
 const Detail = function() {
     let {id} = useParams();
@@ -20,7 +21,7 @@ const Detail = function() {
 
     return (
         <div>
-            <h2>{character.name}</h2>
+            <h2 className={styles.nombre}>{character.name}</h2>
             <h2>{character.status}</h2>
             <h2>{character.species}</h2>
             <h2>{character.gender}</h2>

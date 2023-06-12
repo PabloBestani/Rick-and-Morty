@@ -7,7 +7,7 @@ import style from './card.module.css';
 export function Card({char, onClose, addFav, removeFav, myFavorites}) {
    const [isFav, setIsFav] = useState(false);
    const [closeBtn, setCloseBtn] = useState(true);
-   const location = useLocation();
+   // const location = useLocation();
 
    useEffect(() => {
       myFavorites.forEach((fav) => {

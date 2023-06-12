@@ -32,26 +32,27 @@ const Form = function({login}) {
     return(
         <div className={styles.container}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <label>Correo Electrónico</label>
+                <label className={styles.labels}>Correo Electrónico</label>
                 <input
                     className={styles.input}
                     name="email"
                     type="text"
-                    placeholder="ingresa tu correo"
+                    // placeholder="ingresa tu correo"
                     value={userData.email}
                     onChange={handleChange}
                 />
                 {errors.email && <p>{errors.email}</p>}
-                <label>Contraseña</label>
+                <label className={styles.labels}>Contraseña</label>
                 <input
                     className={styles.input}
                     name="password"
                     type="password"
-                    placeholder="ingresa tu contraseña"
+                    // placeholder="ingresa tu contraseña"
                     value={userData.password}
                     onChange={handleChange}
                 />
                 {errors.password && <p>{errors.password}</p>}
+                //! error de logica? el boton se esta renderizando
                 {errors.email || errors.password ? null : <button type="submit" className={styles.boton}>Ingresar</button>}
             </form>
             <div>
