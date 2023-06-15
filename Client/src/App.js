@@ -40,12 +40,9 @@ function App({removeFav}) {
          fetch(`http://localhost:3001/rickandmorty/character/${id}`)
          .then((res) => res.json())
          .then((data) => {
-         if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-         });
+         })
+         .catch((error) => window.alert('¡No hay personajes con este ID!'));
       }
    }
      

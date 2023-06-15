@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-h1 {
+.container h1 {
     /* box-sizing: border-box; */
     /* height: 60px; */
     color:rgba(250, 134, 26, 0.971);

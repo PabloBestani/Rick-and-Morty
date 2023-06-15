@@ -1,0 +1,21 @@
+.container{
+    position: absolute;
+    top: 35px;
+    width: 350px;
+}
+
+.container button {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgba(195, 92, 67, 0.879);
+    border: 2px solid rgb(101, 14, 53);
+}
+
+.container input {
+    background-color: rgb(101, 14, 53);
+    border: 1px solid rgba(195, 92, 67, 0.879);
+    border-radius: 6px;
+    color:aliceblue;
+    outline: none;
+}

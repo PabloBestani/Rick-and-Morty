@@ -98,3 +98,16 @@ La prop "episode" de cada pj es un array de strings ( que contiene la url de cad
  "episode": el episodio exacto en formato "S05E06" (es un string)
  "name": el nombre del episodio en string "Rick & Morty's Thanksploitation Spectacular"
  "air_date": el dia de estreno en string "July 25, 2021"
+
+
+ <agregar imagen por IA en el about> 
+ pedirle a juanma capaz que me ayude a generar una caricatura
+
+ <efecto al Details>
+ agregarle un efecto de movimiento suave a la card, como flotando
+
+ <hacer un slider de imagenes>
+ para pasar las cards, con drag para moverlas y con scroller abajo
+
+ <flashar meter sonidito de slides?>
+

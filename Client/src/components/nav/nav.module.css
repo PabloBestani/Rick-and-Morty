@@ -1,10 +1,10 @@
 .navContainer {
-    background-color: rgba(84, 57, 112, 0.898);
+    background-color: rgba(130, 66, 199, 0.569);
     border-bottom: 2px solid rgba(55, 12, 65, 0.903);
     display: flex;
-
+    
     position: sticky;
-    padding: 30px 30px;
+    padding: 40px 30px;
     top: 0;
     justify-content: space-around;
     z-index: 100;
@@ -15,6 +15,7 @@
     width: 30%;
     padding: 0 80px;
     /* width: 450px; */
+    /* background-color: beige; */
 }
 
 .hiddenSB {
@@ -25,7 +26,12 @@
 }
 
 .botones {
-    padding: 5px 10px;
+    position: relative;
+    padding: 10px 15px;
+    /* margin: 0 15px; */
+    border-radius: 10px;
+    background-color: rgba(195, 92, 67, 0.879);
+    border: 2px solid rgb(101, 14, 53);
 }
 
 .botones:hover {
@@ -33,5 +39,10 @@
 }
 
 .logout {
-    padding: 5px 10px;
+    position: relative;
+    padding: 10px 15px;
+    /* margin: 0 15px; */
+    border-radius: 10px;
+    background-color: rgba(195, 92, 67, 0.879);
+    border: 2px solid rgb(101, 14, 53);
 }
