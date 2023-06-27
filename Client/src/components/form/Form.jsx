@@ -1,7 +1,7 @@
 import { useState } from "react";
 import validate from "../../utils/validate";
 import styles from './form.module.css';
-import footer from "../../assets/Capture.PNG";
+// import footer from "../../assets/Capture.PNG";
 
 const Form = function({login}) {
     const [userData, setUserData] = useState({

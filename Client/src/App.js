@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import Nav from './components/nav/Nav';
 import About from './views/about/About';
 import Home from './views/home/Home';
@@ -16,9 +17,7 @@ function App({removeFav}) {
    const [characters, setCharacters] = useState([]);
    const [access, setAccess] = useState(false);
    // const [error404, setError404] = useState(false);
-  
-   const EMAIL = 'pablobestanimouk@gmail.com';
-   const PASSWORD = 'rick01';
+
 
    const location = useLocation();
    const navigate = useNavigate();
@@ -31,20 +30,31 @@ function App({removeFav}) {
    //    setError404(isInvalidPath(location.pathname));
    // }, [location]);
 
-   const onSearch = (id) => {
-      id = parseInt(id);
-   
-      if (characters.find((char) => char.id === id)) {
-         window.alert('Este personaje ya esta agregado');
-      } else {
-         fetch(`http://localhost:3001/rickandmorty/character/${id}`)
-         .then((res) => res.json())
-         .then((data) => {
-            setCharacters((oldChars) => [...oldChars, data]);
-         })
-         .catch((error) => window.alert('¡No hay personajes con este ID!'));
+   const onSearch = async(id) => {
+      try {
+         const numberId = id;
+         // console.log(id);
+         // console.log(numberId);
+
+         if (characters.some((char) => char.id === numberId)) {
+            return window.alert('Este personaje ya esta agregado');
+         }
+         
+         const URL = "http://localhost:3001/rickandmorty/character/";
+         const response = (await axios(URL + numberId)).data;
+         setCharacters([response, ...characters]);
+         // console.log(characters);
+
+
+      } catch(error) {
+         window.alert('¡No hay personajes con este ID!');
       }
    }
+
+
+
+
+
      
    function onClose(id) {
       let filtrado = characters.filter((char) => char.id !== id);
@@ -52,12 +62,24 @@ function App({removeFav}) {
       removeFav(id);
    }
 
-   function login (userData) {
-      if (userData.email === EMAIL &&
-         userData.password === PASSWORD) {
-         setAccess(true);
-         navigate('/home');
-      } else alert('Datos incorrectos');
+   async function login(userData) {
+      try {
+         const { email, password } = userData;
+         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const response = (await axios(URL + `?email=${email}&password=${password}`)).data;
+         
+         const { access } = response;
+         setAccess(access);
+         if (access) {
+            axios.delete(URL);
+            navigate('/home');
+         }
+         
+
+      } catch(error) {
+         window.alert("Error al intentar loguearse");
+         console.log(error.message);
+      }
    }
 
    function logout () {

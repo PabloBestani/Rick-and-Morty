@@ -4,18 +4,18 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { addFav, removeFav } from "../../redux/actions";
 import style from './card.module.css';
 
-export function Card({char, onClose, addFav, removeFav, myFavorites}) {
+export function Card({char, onClose, addFav, removeFav, allCharacters}) {
    const [isFav, setIsFav] = useState(false);
    const [closeBtn, setCloseBtn] = useState(true);
    // const location = useLocation();
 
    useEffect(() => {
-      myFavorites.forEach((fav) => {
+      allCharacters.forEach((fav) => {
          if (fav.id === char.id) {
             setIsFav(true);
          }
       })
-   }, [myFavorites]);
+   }, [allCharacters, char.id]);
 
    // useEffect(() => {
    //    for (let i = 0; i < myFavorites.length; i++) {
@@ -71,7 +71,7 @@ export function Card({char, onClose, addFav, removeFav, myFavorites}) {
 
 export const mapStateToProps = (state) => {
    return {
-      myFavorites: state.myFavorites
+      allCharacters: state.allCharacters
    };
 };
 

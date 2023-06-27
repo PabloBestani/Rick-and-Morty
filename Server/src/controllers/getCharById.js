@@ -1,29 +1,29 @@
 const axios = require("axios");
 
-const getCharById = function(res, id) {
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
-    //*ESTO NO VA PORQUE axios devuelve un objeto response con atributo data
-    .then(({data}) => {
-        return { id: id,
-        name: data.name,
-        gender: data.gender,
-        species: data.species,
-        origin: data.origin?.name,
-        image: data.image,
-        status: data.status}
-    })
-    .then((char) => {
-        res.writeHead(200, {"content-type": "application/json"});
-        res.end(JSON.stringify(char));
-        //*ESTE RETURN NO HACE FALTA porque el res.end ya funciona bien
-        // return res.end(JSON.stringify(char));
-    })
-    .catch((error) => {
-        res.writeHead(500, {"content-type": "application/json"});
-        res.end({error: error.message});
-    })
+const getCharById = async function(req, res) {
+    try {
+        const {id} = req.params;
+        const URL = "https://rickandmortyapi.com/api/character/";
+        const data = (await axios(URL + id)).data;
+ 
+        //ESTA BIEN ESTO QUE SIGUE??
+        if(data.id) {
+            const pj = {
+                id: id,
+                status: data.status,
+                name: data.name,
+                species: data.species,
+                origin: data.origin.name,
+                image: data.image,
+                gender: data.gender
+            }
+            return res.status(200).json(pj);
+        }
+        return res.status(404).send("Not found");
+
+    } catch(error) {
+        return res.status(500).json({error: error.message})
+    }
 }
 
-module.exports = {
-    getCharById
-}
+module.exports = getCharById;

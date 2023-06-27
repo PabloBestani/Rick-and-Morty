@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import Card from '../card/Card';
-import styles from './slider.module.css';
+// import { useEffect, useRef, useState } from 'react';
+// import Card from '../card/Card';
+// import styles from './slider.module.css';
 
 
 //TODO crear los iconos en los tags <i> (iconos < y >);
