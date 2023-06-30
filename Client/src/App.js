@@ -71,7 +71,7 @@ function App({removeFav}) {
          const { access } = response;
          setAccess(access);
          if (access) {
-            axios.delete(URL);
+            // axios.delete(URL);
             navigate('/home');
          }
          
